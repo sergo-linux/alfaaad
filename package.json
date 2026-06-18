@@ -1,0 +1,12 @@
+{
+  "name": "alfascan-ios",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:sim": "xcodebuild -project AlfaScan.xcodeproj -scheme AlfaScan -configuration Debug -sdk iphonesimulator CODE_SIGNING_ALLOWED=NO build",
+    "build:app": "xcodebuild -project AlfaScan.xcodeproj -scheme AlfaScan -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO build",
+    "build:ipa": "yarn build:app && bash scripts/make-unsigned-ipa.sh",
+    "clean": "rm -rf build && xcodebuild -project AlfaScan.xcodeproj -scheme AlfaScan clean"
+  },
+  "devDependencies": {}
+}
